@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	swcMinify: false, // it should be false by default
+	images: {
+		domains: ['lh3.googleusercontent.com', 'res.cloudinary.com'],
+	},
+	swcMinify: false,
+	experimental: {
+		serverComponentsExternalPackages: ['cloudinary', 'graphql-request'],
+	},
 };
 
 module.exports = nextConfig;
