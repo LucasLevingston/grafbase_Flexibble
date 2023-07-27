@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import FormField from './FormField';
 import Button from './Button';
 import CustomMenu from './CustomMenu';
-// import { categoryFilters } from '@/constant';
+import { categoryFilters } from '@/constant';
 import { updateProject, createNewProject, fetchToken } from '@/lib/actions';
 import { FormState, ProjectInterface, SessionInterface } from '@/common.types';
 
@@ -139,12 +139,12 @@ const ProjectForm = ({ type, session, project }: Props) => {
 				setState={(value) => handleStateChange('githubUrl', value)}
 			/>
 
-			{/* <CustomMenu
+			<CustomMenu
 				title="Category"
 				state={form.category}
-				// filters={categoryFilters}
+				filters={categoryFilters}
 				setState={(value) => handleStateChange('category', value)}
-			/> */}
+			/>
 
 			<div className="flexStart w-full">
 				<Button
@@ -155,7 +155,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
 					}
 					type="submit"
 					leftIcon={submitting ? '' : '/plus.svg'}
-					// submitting={submitting}
+					isSubmitting={submitting}
 				/>
 			</div>
 		</form>
