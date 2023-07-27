@@ -155,7 +155,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
 					}
 					type="submit"
 					leftIcon={submitting ? '' : '/plus.svg'}
-					isSubmitting={submitting}
+					submitting={submitting}
 				/>
 			</div>
 		</form>
