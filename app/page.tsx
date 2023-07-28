@@ -37,7 +37,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
 	if (projectsToDisplay.length === 0) {
 		return (
 			<section className="flexStart flex-col paddings">
-				<Categories />
+				{/* <Categories /> */}
 
 				<p className="no-result-text text-center">
 					No projects found, go create some first.
@@ -48,7 +48,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
 
 	return (
 		<section className="flexStart flex-col paddings mb-16">
-			<Categories />
+			{/* <Categories /> */}
 
 			<section className="projects-grid">
 				{projectsToDisplay.map(({ node }: { node: ProjectInterface }) => (
