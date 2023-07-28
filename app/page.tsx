@@ -20,6 +20,7 @@ type ProjectSearch = {
 			hasPreviousPage: boolean;
 			hasNextPage: boolean;
 			startCursor: string;
+			category?: string;
 			endCursor: string;
 		};
 	};
