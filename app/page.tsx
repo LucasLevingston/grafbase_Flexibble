@@ -20,7 +20,7 @@ type ProjectSearch = {
       hasPreviousPage: boolean;
       hasNextPage: boolean;
       startCursor: string;
-      endcursor: string;
+      endCursor: string;
     };
   },
 }
@@ -30,35 +30,20 @@ export const dynamicParams = true;
 export const revalidate = 0;
 
 const Home = async ({ searchParams: { category, endcursor } }: Props) => {
-  try{
+  const data = await fetchAllProjects(category, endcursor) as ProjectSearch
 
-  if (category == null){
-    
-    try {
-      const data = await fetchAllProjects(category, endcursor) as ProjectSearch
-      const projectsToDisplay = data?.projectSearch?.edges || [];
-       if (projectsToDisplay.length === 0) {
-      return (
-        <section className="flexStart flex-col paddings">
+  const projectsToDisplay = data?.projectSearch?.edges || [];
+
+  if (projectsToDisplay.length === 0) {
+    return (
+      <section className="flexStart flex-col paddings">
         <Categories />
 
         <p className="no-result-text text-center">No projects found, go create some first.</p>
       </section>
     )
   }
-    } catch (error) {
-      console.log(error)
-    }
-   
- 
 
-
-}
-}
-catch(error){
-  console.log(error)
-    const data = await fetchAllProjects(category, endcursor) as ProjectSearch
-    const projectsToDisplay = data?.projectSearch?.edges || [];
   return (
     <section className="flexStart flex-col paddings mb-16">
       <Categories />
@@ -79,13 +64,12 @@ catch(error){
 
       <LoadMore 
         startCursor={data?.projectSearch?.pageInfo?.startCursor} 
-        endCursor={data?.projectSearch?.pageInfo?.endcursor} 
+        endCursor={data?.projectSearch?.pageInfo?.endCursor} 
         hasPreviousPage={data?.projectSearch?.pageInfo?.hasPreviousPage} 
         hasNextPage={data?.projectSearch?.pageInfo.hasNextPage}
       />
     </section>
   )
-}
-}
+};
 
 export default Home;
