@@ -39,16 +39,19 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
  
 
 
-  if (projectsToDisplay.length === 0) {
-    return (
-      <section className="flexStart flex-col paddings">
+    if (projectsToDisplay.length === 0) {
+      return (
+        <section className="flexStart flex-col paddings">
         <Categories />
 
         <p className="no-result-text text-center">No projects found, go create some first.</p>
       </section>
     )
   }
-  }
+}
+}
+catch(error){
+  console.log(error)
     const data = await fetchAllProjects(category, endcursor) as ProjectSearch
     const projectsToDisplay = data?.projectSearch?.edges || [];
   return (
@@ -77,9 +80,6 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
       />
     </section>
   )
-}
-catch(error){
-console.log(error)
 }
 }
 
