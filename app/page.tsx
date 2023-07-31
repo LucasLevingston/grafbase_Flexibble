@@ -20,7 +20,7 @@ type ProjectSearch = {
       hasPreviousPage: boolean;
       hasNextPage: boolean;
       startCursor: string;
-      endCursor: string;
+      endcursor: string;
     };
   },
 }
@@ -33,13 +33,11 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
   try{
 
   if (category == null){
-
-    const data = await fetchAllProjects(category, endcursor) as ProjectSearch
-    const projectsToDisplay = data?.projectSearch?.edges || [];
- 
-
-
-    if (projectsToDisplay.length === 0) {
+    
+    try {
+      const data = await fetchAllProjects(category, endcursor) as ProjectSearch
+      const projectsToDisplay = data?.projectSearch?.edges || [];
+       if (projectsToDisplay.length === 0) {
       return (
         <section className="flexStart flex-col paddings">
         <Categories />
@@ -48,6 +46,13 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
       </section>
     )
   }
+    } catch (error) {
+      console.log(error)
+    }
+   
+ 
+
+
 }
 }
 catch(error){
@@ -74,7 +79,7 @@ catch(error){
 
       <LoadMore 
         startCursor={data?.projectSearch?.pageInfo?.startCursor} 
-        endCursor={data?.projectSearch?.pageInfo?.endCursor} 
+        endCursor={data?.projectSearch?.pageInfo?.endcursor} 
         hasPreviousPage={data?.projectSearch?.pageInfo?.hasPreviousPage} 
         hasNextPage={data?.projectSearch?.pageInfo.hasNextPage}
       />
