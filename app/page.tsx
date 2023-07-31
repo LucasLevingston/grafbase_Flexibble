@@ -21,7 +21,7 @@ type ProjectSearch = {
 			hasNextPage: boolean;
 			startCursor: string;
 			category?: string;
-			endCursor: string;
+			endcursor: string;
 		};
 	};
 };
@@ -67,7 +67,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
 
 			<LoadMore
 				startCursor={data?.projectSearch?.pageInfo?.startCursor}
-				endCursor={data?.projectSearch?.pageInfo?.endCursor}
+				endcursor={data?.projectSearch?.pageInfo?.endcursor}
 				hasPreviousPage={data?.projectSearch?.pageInfo?.hasPreviousPage}
 				hasNextPage={data?.projectSearch?.pageInfo.hasNextPage}
 			/>

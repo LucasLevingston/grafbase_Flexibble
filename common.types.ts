@@ -39,7 +39,7 @@ export interface UserProfile {
 			hasPreviousPage: boolean;
 			hasNextPage: boolean;
 			startCursor: string;
-			endCursor: string;
+			endcursor: string;
 		};
 	};
 }

@@ -5,19 +5,19 @@ import Button from './Button';
 
 type Props = {
 	startCursor: string;
-	endCursor: string;
+	endcursor: string;
 	hasPreviousPage: boolean;
 	hasNextPage: boolean;
 };
 
-const LoadMore = ({ startCursor, endCursor, hasPreviousPage, hasNextPage }: Props) => {
+const LoadMore = ({ startCursor, endcursor, hasPreviousPage, hasNextPage }: Props) => {
 	const router = useRouter();
 
 	const handleNavigation = (direction: string) => {
 		const currentParams = new URLSearchParams(window.location.search);
 		if (direction === 'next' && hasNextPage) {
 			currentParams.delete('startcursor');
-			currentParams.set('endcursor', endCursor);
+			currentParams.set('endcursor', endcursor);
 		} else if (direction === 'first ' && hasPreviousPage) {
 			currentParams.delete('endcursor');
 			currentParams.set('startcursor', startCursor);
