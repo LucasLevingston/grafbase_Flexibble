@@ -30,8 +30,7 @@ export const dynamicParams = true;
 export const revalidate = 0;
 
 const Home = async ({ searchParams: { category, endcursor } }: Props) => {
-  try{
-
+  
     
     const data = await fetchAllProjects(category, endcursor) as ProjectSearch
     
@@ -74,9 +73,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
       />
     </section>
   )
-    } catch(error){
-      console.log(error)
-    }
+    
 };
 
 export default Home;
