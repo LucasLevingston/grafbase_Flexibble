@@ -1,3 +1,4 @@
+import { categoryFilters } from './../constant/index';
 import { GraphQLClient } from 'graphql-request';
 
 import {
@@ -22,6 +23,10 @@ const serverUrl = isProduction
 	: 'http://localhost:3000';
 
 const client = new GraphQLClient(apiUrl);
+type varialbesProps = {
+	category: null | string;
+	endcursor: null | string;
+};
 
 export const fetchToken = async () => {
 	try {
@@ -54,10 +59,9 @@ const makeGraphQLRequest = async (query: string, variables = {}) => {
 	}
 };
 
-export const fetchAllProjects = (category?: string | null, endcursor?: string | null) => {
+export const fetchAllProjects = (category: string, endcursor: string | null) => {
 	client.setHeader('x-api-key', apiKey);
-	console.log('teste');
-	return makeGraphQLRequest(projectsQuery, { category, endcursor });
+	return makeGraphQLRequest(projectsQuery, { endcursor });
 };
 
 export const createNewProject = async (
