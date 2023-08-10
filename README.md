@@ -1,4 +1,5 @@
 Flexibble - Programming Projects Website
+
 Flexibble is a web application that aims to be a collaborative platform for programming enthusiasts to showcase, collaborate, and discover exciting programming projects. Built using cutting-edge technologies, including Next.js 13, GraphQL, GraphBase, Tailwind CSS, React, and TypeScript, Flexibble provides a seamless and interactive user experience.
 
 Features
