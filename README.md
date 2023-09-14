@@ -1,29 +1,32 @@
-Flexibble - Programming Projects Website
+# Projeto Full Stack com Next.js 13
 
-Flexibble is a web application that aims to be a collaborative platform for programming enthusiasts to showcase, collaborate, and discover exciting programming projects. Built using cutting-edge technologies, including Next.js 13, GraphQL, GraphBase, Tailwind CSS, React, and TypeScript, Flexibble provides a seamless and interactive user experience.
+![Logo do Projeto](/public/logo.svg)
 
-Features
-Explore Projects: Browse through a diverse collection of programming projects submitted by talented developers from all around the world. Discover innovative ideas and gain inspiration for your next project.
+Este é um projeto baseado no vídeo "Build and Deploy a Full Stack Next.js 13 Application". Ele é uma aplicação web full stack que utiliza Next.js 13, React, TypeScript e Tailwind CSS para criar uma aplicação moderna e responsiva.
 
-Submit Your Project: Showcase your own programming projects on Flexibble and get feedback from the community. Share your experiences, challenges, and accomplishments with fellow developers.
+## Tecnologias Usadas
 
-Collaborate and Connect: Find like-minded developers who share your interests and skills. Collaborate on existing projects or start new ones together.
+- React
+- Next.js 13
+- TypeScript
+- Tailwind CSS
 
-Powerful Search: Utilize our advanced search functionality to find projects based on various criteria such as programming languages, project types, and difficulty levels.
+## Funcionalidades Principais
 
-Interactive Project Pages: Each project comes with an interactive page where you can explore the project's details, documentation, and source code. Leave comments and engage in discussions with project creators and other users.
+- **Funcionalidade 1:** Descrição da funcionalidade principal.
 
-Technologies Used
-Next.js 13: Utilizing the latest version of Next.js, we ensure excellent performance, faster page loads, and improved developer experience.
+- **Funcionalidade 2:** Descrição da funcionalidade principal.
 
-GraphQL: Our GraphQL API offers a flexible and efficient way to fetch data, allowing for a smooth and responsive user interface.
+- **Funcionalidade 3:** Descrição da funcionalidade principal.
 
-GraphBase: We leverage GraphBase, a powerful graph database, to manage the relationships between projects, users, and comments.
+## Configuração e Execução
 
-Tailwind CSS: With Tailwind CSS, we craft stunning and responsive UI components, enabling a visually appealing and consistent design.
+Siga estas etapas para configurar e executar o projeto em seu ambiente local:
 
-React: The entire application is built with React, making it highly interactive and easy to maintain.
+1. **Clone o Repositório:**
 
-TypeScript: Embracing TypeScript enables us to catch errors during development, leading to more reliable code and enhanced developer productivity.
+   ```bash
+   git clone https://github.com/LucasLevingston/grafbase_Flexibble.git
+   cd grafbase_Flexibble
 
-Join us in our mission to foster a vibrant community of programmers and bring exciting projects to life! Happy coding! 🚀
+   ```
